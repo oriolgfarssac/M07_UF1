@@ -16,7 +16,7 @@ while numero != randomNum:
         if numero > randomNum:
             print(f"Has fallat el numero es més petit! I portes {intents} intents")
             intents+=1
-        else:
-            print(f"Moltbe el numero era {randomNum}! I l'has endevinat a la {intents}")
+
+print(f"Moltbe el numero era {randomNum}! I l'has endevinat a la {intents}")
 
 
