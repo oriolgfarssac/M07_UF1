@@ -34,5 +34,4 @@ def main():
     matriu_modificada = modificar_matriu(matriu)
     matriu_final = modificar_ultima_columna(matriu_modificada, primer_valor_ultima_columna)
 
-
 main()

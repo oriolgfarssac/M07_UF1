@@ -1,5 +1,6 @@
 euros = int(input("introdueixi un valor en €"))
 
+
 iva = int(input("Introdueix un IVA (4%, 10% o 21%)"))
 
 while iva != 4 and iva != 10 and iva != 21:
