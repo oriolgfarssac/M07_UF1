@@ -48,4 +48,4 @@ def main():
     # Modificar la última columna de la nova matriu
     matriu_final = modificar_ultima_columna(matriu_modificada)
 
-
+main()
