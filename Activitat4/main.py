@@ -1,4 +1,5 @@
 from exercici1 import exercici1
+import exercici2
 from exercici4_Arman import matriuRandom
 from exercici4_Arman import segonaMatriu
 from exercici4_Arman import terceraMatriu
@@ -26,6 +27,44 @@ print(f"Del exercici 1 el Número total d’elements: {totalElements}", "\n")
 
 tipusElements = matriu.dtype
 print(f"Del exercici 1 el Tipus d’elements interns: {tipusElements}", "\n")
+
+
+# Funció per mostrar la informació de les matrius de l'exercici 2
+def info_matriu(matriu, nom_matriu):
+    # Mostrar la matriu
+    print(f"\nMatriu de l'exercici2   {nom_matriu}:")
+    for fila in matriu:
+        print(fila)
+
+    # Número total d'elements
+    total_elements = sum(len(fila) for fila in matriu) if isinstance(matriu[0], list) else len(matriu)
+    print(f"Total d'elements a la matriu {nom_matriu}: {total_elements}")
+
+    # Dimensió de la matriu (files, columnes)
+    if isinstance(matriu[0], list):
+        dimensions = (len(matriu), len(matriu[0]))
+    else:
+        dimensions = (1, len(matriu))
+    print(f"Dimensió de la matriu {nom_matriu}: {dimensions} (files, columnes)")
+
+    # Tipus d'elements interns
+    tipus_element = type(matriu[0][0]) if isinstance(matriu[0], list) else type(matriu[0])
+    print(f"Tipus d'elements interns a la matriu {nom_matriu}: {tipus_element}")
+
+    # Tamany de la matriu
+    tamany = total_elements
+    print(f"Tamany de la matriu {nom_matriu}: {tamany}")
+
+
+
+matriu1 = exercici2.creacioarray1()
+matriu2 = exercici2.creacioarray2()
+matriu3 = exercici2.creacioarray3()
+
+
+info_matriu(matriu1, "1")
+info_matriu(matriu2, "2")
+info_matriu(matriu3, "3")
 
 
 print("Exercici 4 del Arman", "\n" )
