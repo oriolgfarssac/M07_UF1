@@ -19,7 +19,8 @@ def modificar_matriu(matriu):
 
 
 # Modificar la matriu perque la última columna ha de tenir els mateixos números
-def modificar_ultima_columna(matriu_modificada, primer_valor_ultima_columna):
+def modificar_ultima_columna(matriu_modificada):
+    primer_valor_ultima_columna = matriu_modificada[0, -1]
     matriu_modificada[:, -1] = primer_valor_ultima_columna
     print(f"\nMatriu modificada amb última columna igual a {primer_valor_ultima_columna}:")
     print(matriu_modificada)
@@ -32,6 +33,6 @@ def main():
     matriu = crear_matriu()
     primer_valor_ultima_columna = matriu[0, -1]
     matriu_modificada = modificar_matriu(matriu)
-    matriu_final = modificar_ultima_columna(matriu_modificada, primer_valor_ultima_columna)
+    matriu_final = modificar_ultima_columna(matriu_modificada)
 
 main()
