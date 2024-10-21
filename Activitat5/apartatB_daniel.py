@@ -64,7 +64,7 @@ def crear_grafiques(df):
 
 
 # Funció principal que crida les altres
-def mainB():
+def mainDani():
     # Carreguem el fitxer
     df = carregar_dades_fitxer('List of world cities by population density.csv')
 

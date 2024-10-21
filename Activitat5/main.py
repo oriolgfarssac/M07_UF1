@@ -1,8 +1,8 @@
 from apartatA_arman import mainArman
-from apartatB_daniel import mainB
+from apartatB_daniel import mainDani
 from apartatC_oriol import mainOriol
 
 
 mainArman()
-mainB()
+mainDani()
 mainOriol()
