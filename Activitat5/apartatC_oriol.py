@@ -2,61 +2,66 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Llista d'IDs seleccionats
+# Lista de IDs seleccionados
 selected_ids = [3, 13, 34, 56, 70, 85, 110, 120, 210, 400]
+
 
 df = pd.read_csv('mobiles.csv', usecols=['id', 'clock_speed', 'fc', 'battery_power'])
 
 def show_clock_speed(ids):
     clock_speeds = df[df['id'].isin(ids)][['id', 'clock_speed']]
-    print("Clock Speed dels mòbils seleccionats:")
+    print("Clock Speed de los móviles seleccionados:")
     print(clock_speeds.to_string(index=False))
     return clock_speeds
 
 def show_mega_pixels(ids):
     mega_pixels = df[df['id'].isin(ids)][['id', 'fc']]
-    print("Megapixels dels mòbils seleccionats:")
+    print("Megapixels de los móviles seleccionados:")
     print(mega_pixels.to_string(index=False))
     return mega_pixels
 
 def show_battery_power(ids):
     battery_power = df[df['id'].isin(ids)][['id', 'battery_power']]
-    print("Clock Speed dels mòbils seleccionats:")
+    print("Battery Power de los móviles seleccionados:")
     print(battery_power.to_string(index=False))
     return battery_power
 
-
-def plot_data(clock_speed, mega_pixels, battery_power):
-    ids = clock_speed['id'].values
-    clock_speed_values = clock_speed['clock_speed'].values
-    mega_pixels_values = mega_pixels['fc'].values
-    battery_power_values = battery_power['battery_power'].values
-
-    x = np.arange(len(ids))
-
-    width = 0.15
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.bar(x - width, clock_speed_values, width, label='Clock Speed (GHz)')
-    ax.bar(x, mega_pixels_values, width, label='Megapixels (fc)')
-    ax.bar(x + width, battery_power_values, width, label='Battery Power (mAh)')
-
-    ax.set_xlabel('Mobile ID')
-    ax.set_ylabel('Values')
-    ax.set_title('Comparación de características de móviles seleccionados')
-    ax.set_xticks(x)
-    ax.set_xticklabels(ids)
-    ax.legend()
-    plt.tight_layout()
-    ax.set_yscale('log')  # Cambia a escala logarítmica
-    plt.ylim(1, 2000)
+def grafic_clock_speed(clock_speed):
+    plt.figure(figsize=(10, 6))
+    plt.bar(clock_speed['id'], clock_speed['clock_speed'], color='blue', width=5)
+    plt.xlabel('Mobile ID')
+    plt.ylabel('Clock Speed (GHz)')
+    plt.title('Clock Speed dels móvils sel·lecciónats')
+    plt.ylim(0, 5)
+    plt.grid()
     plt.show()
 
+def grafic_mega_pixels(mega_pixels):
+    plt.figure(figsize=(10, 6))
+    plt.bar(mega_pixels['id'], mega_pixels['fc'], color='orange', width=5)
+    plt.xlabel('Mobile ID')
+    plt.ylabel('Megapixels (fc)')
+    plt.title('Megapixels dels móvils sel·lecciónats')
+    plt.ylim(0, 20)
+    plt.grid()
+    plt.show()
 
-def main():
+def grafic_battery_power(battery_power):
+    plt.figure(figsize=(10, 6))
+    plt.bar(battery_power['id'], battery_power['battery_power'], color='green', width=5)
+    plt.xlabel('Mobile ID')
+    plt.ylabel('Battery Power (mAh)')
+    plt.title('Battery Power dels móvils sel·lecciónats')
+    plt.ylim(0, 2000)
+    plt.grid()
+    plt.show()
+
+def mainOriol():
     clock_speed = show_clock_speed(selected_ids)
     mega_pixels = show_mega_pixels(selected_ids)
     battery_power = show_battery_power(selected_ids)
-    plot_data(clock_speed, mega_pixels, battery_power)
 
-main()
+    grafic_clock_speed(clock_speed)
+    grafic_mega_pixels(mega_pixels)
+    grafic_battery_power(battery_power)
+
