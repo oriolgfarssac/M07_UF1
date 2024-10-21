@@ -4,6 +4,7 @@ import pandas as pd
 from funcio1_arman import funcio1
 from funcio2_arman import funcio2
 from funcio3_arman import funcio3
+from exerciciB import mainB
 
 def main():
     casos = funcio1()
@@ -78,3 +79,4 @@ def main():
 
 
 main()
+mainB()
