@@ -42,21 +42,21 @@ def mostrar_densitat_m2(df):
 # Funció que crea les gràfiques circulars
 def crear_grafiques(df):
     # Gràfica per a la població
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 6), num="Població per ciutat")
     plt.pie(df['Population'], labels=df['City'], autopct='%1.1f%%')
     plt.title("Distribució de la població per ciutat")
     plt.legend(loc='best')
     plt.show()
 
     # Gràfica per a la densitat per km²
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 6), num="Densitat per km² per ciutat")
     plt.pie(df['Density (/km²)'], labels=df['City'], autopct='%1.1f%%')
     plt.title("Distribució de la densitat per km² per ciutat")
     plt.legend(loc='best')
     plt.show()
 
     # Gràfica per a la densitat per m²
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 6), num="Densitat per m² per ciutat")
     plt.pie(df['Density (/km²)'] / 1_000_000, labels=df['City'], autopct='%1.1f%%')
     plt.title("Distribució de la densitat per m² per ciutat")
     plt.legend(loc='best')
