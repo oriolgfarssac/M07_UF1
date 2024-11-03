@@ -6,8 +6,8 @@ from update import actualitzarRegistre
 from delete import eliminarRegistre
 
 print("Menú de Gestió de Registres")
-print("1. Crear un nou registre")
-print("2. Crear una taula")
+print("1. Crear una taula")
+print("2. Crear un nou registre")
 print("3. Llegir tots els registres")
 print("4. Actualitzar un registre existent")
 print("5. Eliminar un registre")
